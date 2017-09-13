@@ -1,0 +1,36 @@
+@mixin respond_to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media only screen and  (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media only screen and (min-width: 769px) {
+      @content;
+    }
+  }//spacing is own justified width
+  @else if $breakpoint == "spacing" {
+    @media only screen and (max-width: 789px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "xlarge" {
+    @media only screen and (min-width: 1500px) {
+      @content;
+    }
+  }
+  
+  @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}
