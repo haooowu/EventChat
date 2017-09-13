@@ -167,7 +167,7 @@ class EventDetailChat extends React.Component {
 				{this.state.event && this.state.valid ? 
 					<section>
 						<div id="descriptionHtml" dangerouslySetInnerHTML={{__html: this.state.event[0].description.html}}></div>
-						<a href={this.state.event[0].url}><h4>Click me to the Eventbrite Page</h4></a>
+						<a href={this.state.event[0].url}><h4>Go to Eventbrite Page</h4></a>
 						<p id="locationChat">Location:</p>
 						<div>{this.state.address}</div>
 					</section>
@@ -209,7 +209,7 @@ class EventDetailChat extends React.Component {
 						handleSubmit={this.handleSubmit}
 						username={this.state.username}
 					/>
-				</section> : <p>You must login and in valid event to use the chat room</p>}
+				</section> : <p id="warn">You must login and in valid event to use the chat room</p>}
 			</div>
 		)
 	}

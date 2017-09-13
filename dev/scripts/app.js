@@ -214,7 +214,7 @@ class App extends React.Component {
 // keypress for the location of the autofill and press enter will not updates the location state 
 // except actual click, thus onsubmit will only search for what typed in onchage
 $(document).ready(function() { //have to force ignore form submission by enter
-	$(window).keydown(function(event){
+	$(window).keydown(function(event){//same situation for chat form submit using enter/arrow keypress
 		if(event.keyCode == 13) {
 			event.preventDefault();
 		}
