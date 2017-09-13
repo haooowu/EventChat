@@ -28,7 +28,7 @@ class ChatForm extends React.Component {
 	render(){
 		return(
 			<section id="chatSubmission">
-				<form onSubmit={this.props.handleSubmit}>
+				<form id="msgSubmit" onSubmit={this.props.handleSubmit}>
 				<input type="text" name="msg" placeholder="Message" onChange={this.props.handleChange} value={this.props.searchq} required/>
 				<button>SEND</button>
 				</form>
@@ -109,6 +109,8 @@ class EventDetailChat extends React.Component {
 	//handle message
 	handleSubmit(event) {
 		event.preventDefault();
+		const form = document.getElementById("msgSubmit");
+		form.reset();
 		const roomID = this.props.match.params.event_id;
 		const newMessage = { 
 			name: this.state.uid.displayName || this.state.uid.email,
@@ -154,7 +156,7 @@ class EventDetailChat extends React.Component {
 		var messageID = this.state.msgIDs;
 		return (
 			<div>
-				{this.state.event && this.state.valid ? <h3>Event:{this.state.event[0].name.text}</h3> 
+				{this.state.event && this.state.valid ? <h3 id="eventNameChat">{this.state.event[0].name.text}</h3> 
 					: 
 					<h1>404 event page not found</h1>
 				}
@@ -165,8 +167,8 @@ class EventDetailChat extends React.Component {
 				{this.state.event && this.state.valid ? 
 					<section>
 						<div id="descriptionHtml" dangerouslySetInnerHTML={{__html: this.state.event[0].description.html}}></div>
-						<a href={this.state.event[0].url}><h4>Click me to check detail</h4></a>
-						<p>Location:</p>
+						<a href={this.state.event[0].url}><h4>Click me to the Eventbrite Page</h4></a>
+						<p id="locationChat">Location:</p>
 						<div>{this.state.address}</div>
 					</section>
 					: null
@@ -180,18 +182,23 @@ class EventDetailChat extends React.Component {
 									{this.state.msgIDs[i] !== "count" ?
 									<div className="chat_content">
 										{this.state.uid.uid === msgholder[messageID[i]]["uid"] ?
-											<div><div className="selfImg_holder">
-												<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
+											<div className="self">
+												<div className="boo">
+													<p>{msgholder[messageID[i]]["time"]}</p>
+													<div className="selfImg_holder">
+														<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
+													</div>
+												</div>
 											</div>
-											<p>Said by you, dont show this and append right</p></div>
 											:
-											<div><div className="otherImg_holder">
-												<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
+											<div className="other">
+												<p><span>{msgholder[messageID[i]]["name"]}</span>, <span>{msgholder[messageID[i]]["time"]}</span></p>
+												<div className="otherImg_holder">
+													<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
+												</div>
 											</div>
-											<p>By: {msgholder[messageID[i]]["name"]}</p></div>
 										}
-										<p>{msgholder[messageID[i]]["time"]}</p>
-										<p>{msgholder[messageID[i]]["msg"]}</p>
+										<div className="actualmsg_holder"><p className="actualmsg">{msgholder[messageID[i]]["msg"]}</p></div>
 									</div> : null}
 								</li>
 							)

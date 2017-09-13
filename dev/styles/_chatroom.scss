@@ -1,0 +1,137 @@
+#descriptionHtml{
+	a{
+		color:blue;
+	}
+}
+
+h3#eventNameChat{
+	color: $maincolor1;
+}
+
+
+section{
+	h4{
+		text-transform: uppercase;
+		color: $maincolor1;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	#locationChat{
+		text-transform: uppercase;
+		font-size: 19px;
+	}
+}
+
+
+
+section #messageBox{
+	max-width: 800px;
+	margin: 10px auto;
+	h2{
+		text-align: center;
+		font-family: $bodyFont;
+	}
+	#chatcontainer{ //this is caused by count in firebase as one of the key
+		max-height: 480px;
+		overflow-y: scroll;
+		background-color: #fff;
+		padding: 10px 10px 4px 10px;
+		box-shadow: inset  2px 2px 2px 1px rgba(0, 0, 0, .2);
+		li:last-child {
+			display: none;
+		}
+	}
+	#chatSubmission{
+		width: 100%;
+		input{
+			width:80%;
+			padding-left: 30px;
+			box-shadow: 0 4px 1px rgba(0,0,0,0.12);
+			position: relative;
+			background-color: #ffffff;
+			height: 34px;
+			border: none;
+		}
+		button{
+			width: 20%;
+			box-sizing: border-box;
+			box-shadow: 0 4px 9px rgba(0,0,0,0.12), 0 5px 5px rgba(0,0,0,0.08);
+			position: relative;
+			/* width: 13em;  - apply for fixed size */
+			padding: 1px 18px;
+			border: none;
+			transition: 0.3s;
+			line-height: 34px;
+			border-radius: 0  0.18em 0.18em 0;
+			color: #FFF;
+			background: rgba(60,100,220,0.79);
+			&:focus {
+			  outline: none;
+			}
+			&:active {
+			  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+			}
+		}
+	}
+}
+
+div.chat_content{
+	position: relative;
+	//self, append right
+	div.self{
+		display: flex;
+		div.boo{
+			margin-left: auto;
+			display: flex;
+			flex-direction: column;
+			div.selfImg_holder{
+				max-width: 50px;
+				max-height: 50px;
+				border-radius: 50%;
+				margin-left: auto;
+				img{
+					border-radius: 50%;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		p{
+			margin-left: auto;
+			font-size: 13px;
+			color: rgba(0,0,0,0.7);
+		}
+	}
+	//other
+	div.other{
+		span{
+			font-size: 13px;
+			color : rgba(0,0,0,0.7);
+		}
+	}
+	div.self~div.actualmsg_holder{
+		position: absolute;
+		bottom: 15px;
+		padding: 4px 10px;
+		right: 55px;
+		border-radius: 10px;
+		border: 0.2px solid grey;
+		p{
+			text-align: right;
+			margin: 0;
+		}
+	}
+
+	div.other~div.actualmsg_holder{
+		position: absolute;
+		bottom: 15px;
+		padding: 4px 10px;
+		left: 55px;
+		border-radius: 10px;
+		border: 0.2px solid grey;
+		p{
+			margin: 0;
+		}
+	}
+}

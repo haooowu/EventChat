@@ -61,16 +61,23 @@ class History extends React.Component {
 		//console.log(this.state.history)
 		return (
 			<div>
-				<p>When login, your chatted event will appear here</p>
+				<p id="attension">When login, your chatted event will appear here</p>
 				{this.state.history.map((event) => {
 					return (
 						<Link to={event.link} key={event.link}>
 							<div className="resultCard" id={event.venue_id}>
-								<h2>{event.title}</h2>
-								<img src={`${event.logourl}`} alt=""/>
-								<h5>Start: {event.start}</h5>
-								<h5>End: {event.end}</h5>
-								<h5>Total Message: {this.state.msgcount[0][event.eventid]}</h5>
+								<div className="eventlogo_holder">
+									<img src={`${event.logourl}`} alt=""/>
+								</div>
+							
+								<div className="titledate_holder bar">
+									<h5>Total Message: <span id="msgCount"> {this.state.msgcount[0][event.eventid]}</span></h5>
+									<h2>{event.title}</h2>
+									<div>
+										<h5>Start: {event.start}</h5>
+										<h5>End: {event.end}</h5>
+									</div>
+								</div>
 							</div>
 						</Link>
 					)

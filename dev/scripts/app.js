@@ -81,7 +81,7 @@ class App extends React.Component {
 					//if (!event.hasOwnProperty("logo")) {
 					if (event.logo === null) {
 						event.logo = {}
-						event.logo.url = "https://unsplash.it/500/200";
+						event.logo.url = "https://unsplash.it/440/240";
 					}
 				})
 				this.setState({
@@ -189,7 +189,7 @@ class App extends React.Component {
         return (<Router>
 	        <div>
 		        <Header updateUser={this.updateUser} />
-	        	<section>
+	        	<section id="maincontent_holder">
 	        		<div id="maincontent" className="wrapper">
 	        		<Route exact path="/" render={()=>(
 	                	<EventGenerator
@@ -205,11 +205,11 @@ class App extends React.Component {
 	                <Route exact path="/history" component={History} />
 	                </div>
 	        	</section>
-		        <footer></footer>
 	        </div>
 	    </Router>)
     }
 }
+
 // AUTOCOMPLETE BUG: when typeing and selecting from npm google-auto-compelete, 
 // keypress for the location of the autofill and press enter will not updates the location state 
 // except actual click, thus onsubmit will only search for what typed in onchage

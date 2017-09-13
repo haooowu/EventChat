@@ -41,12 +41,12 @@ class Header extends React.Component {
 		return (
 			<nav>
 				<div className="wrapper">
-					<h1 id="logo"><Link to="/">Eventbrite Chatter</Link></h1>
+					<h1 id="logo"><Link to="/">EventChat<i className="fa fa-comment" aria-hidden="true"></i></Link></h1>
 					{this.state.uid ? 
 						<section id="usersection">
-							<Link to="/">Home</Link>
-							<Link to="/history/">History</Link>
-							<Link to="/"><button onClick={this.logout}>Log Out</button></Link>
+							<Link to="/"><button id="homebtn">Home</button></Link>
+							<Link to="/history/"><button id="historybtn">History</button></Link>
+							<Link to="/"><button id="logoutbtn" onClick={this.logout}>Log Out</button></Link>
 							<div className="profile_holder">
 								<div className="selfImg_holder">
 									<img src={this.state.uid.photoURL} alt=""/>
@@ -55,7 +55,7 @@ class Header extends React.Component {
 						</section>
 						:
 						<section id="usersection">
-							<button onClick={this.login}>Log In</button>
+							<button id="loginbtn" onClick={this.login}>Log In</button>
 						</section>
 					}
 				</div>

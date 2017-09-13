@@ -11,7 +11,7 @@ class Form extends React.Component{
 			<section id="formSubmission">
 				<form id="form_search" onSubmit={this.props.handleSubmit}>
 				<div id="locationInput_holder">
-					<Autocomplete //Credit: Anson :) 
+					<Autocomplete
 						id="locationInput"
 						onPlaceSelected={this.props.handleAutofill}
 						types={['(regions)']}
@@ -32,7 +32,7 @@ class AdditionalResult extends React.Component{
 	render(){
 		return(
 			<section id="formSubmission">
-				<div>
+				<div id="formHint">
 					{this.props.templocation != "" ?
 						<span>Location: {this.props.templocation} </span> : null
 					}
@@ -40,11 +40,8 @@ class AdditionalResult extends React.Component{
 						<span>keyword: {this.props.tempsearchq}</span> : null
 					}
 				</div>
-				<h1>Total {this.props.counts} events, 
-					 <span onClick={this.props.handlePrevious}><i className="fa fa-arrow-left" aria-hidden="true"></i></span> 
-					 PAGE: {this.props.page} 
-					 <span onClick={this.props.handleClick}><i className="fa fa-arrow-right" aria-hidden="true"></i></span> 
-				</h1> 
+					 <h3 id="pagination"> <span onClick={this.props.handlePrevious}><i className="fa fa-arrow-left" aria-hidden="true"></i></span> Total {this.props.counts} events | Page: {this.props.page}
+					 <span onClick={this.props.handleClick}> <i className="fa fa-arrow-right" aria-hidden="true"></i></span> </h3>
 			</section>
 		)
 	}
@@ -72,7 +69,20 @@ class EventGenerator extends React.Component {
 							/> : 
 							<div>
 								{this.props.state.sth ?
-									<h2>Greetings! {this.props.state.sth}</h2> : null 
+									<div>
+										<h3 id="greet">Greetings! {this.props.state.sth}</h3>
+										<h1 id="landingText">Welcome to EventChat</h1>
+										<h3>This site is an Eventbrite viewer with chatroom functionality for each event</h3>
+										<h3>Type into either inputs to start search events!</h3>
+										<h3>You can login to use chat room, and view your chat history for every event</h3>
+									</div>
+									 : 
+									<div>
+										<h1 id="landingText">Welcome to EventChat</h1>
+										<h3>This site is an Eventbrite viewer with chatroom functionality for each event</h3>
+										<h3>Type into either inputs to start search events!</h3>
+										<h3>You can login to use chat room, and view your chat history for every event</h3>
+									</div>
 								}
 							</div>
 							}
@@ -83,10 +93,14 @@ class EventGenerator extends React.Component {
 							return (
 								<Link to={`/${event.id}/${event.venue_id}`} key={event.id}>
 									<div className="resultCard" id={event.venue_id}>
-										<h2>{event.name.text}</h2>
-										<img src={`${event.logo.url}`} alt=""/>
-										<h5>Start: {event.start.local}</h5>
-										<h5>End: {event.end.local}</h5>
+										<div className="eventlogo_holder">
+											<img src={`${event.logo.url}`} alt=""/>
+										</div>
+										<div className="titledate_holder">
+											<h5>Start: {event.start.local.replace(/T/g , " ")}</h5>
+											<h3 className = "title">{event.name.text}</h3>
+											<h5>End: {event.end.local.replace(/T/g , " ")}</h5>
+										</div>
 									</div>
 								</Link>
 							)

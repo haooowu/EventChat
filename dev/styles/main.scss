@@ -1,111 +1,31 @@
 @import 'setup';
 @import 'mixins';
 @import 'variables';
-
-// overflow-y: scroll;
-
+@import 'chatroom';
+@import 'history';
+// footer{
+// 	background-color: $maincolor2;
+// 	text-align: center;
+// 	width: 100%;
+// 	height: 50px;
+// 	z-index: 99;
+// 	p{
+// 		line-height: 50px;
+// 		margin: 0;
+// 	}
+// }
 /*
 	General
 */
-
 .wrapper{
 	max-width: 980px;
 	margin: 0 auto;
+	padding: 0 1%;
 }
 
-a{
-	color: inherit;
-	text-decoration: none;
-	&:hover{
-		color:royalblue;
-	}
-}
+ul {list-style-type: none; margin: 0; padding: 0;}
 
-#descriptionHtml{
-	a{
-		color:blue;
-	}
-}
-
-#chatcontainer{ //this is caused by count in firebase as one of the key
-	li:last-child {
-		display: none;
-	}
-}
-
-///////////
-/*
-	Header Navigation
-*/
-
-nav {
-	background-color: orange;
-	.wrapper{
-		text-align: center;
-		display: flex;
-		#logo{
-			align-self: flex-start;
-			text-align: left;
-		}
-		section{
-			min-width: 250px;
-			// margin-left: auto;
-			display: flex; 
-			justify-content: space-between;
-			align-items: center;
-			margin-left: auto;
-			.profile_holder{
-				display: flex;
-			}
-			button{
-				margin-left: auto;
-			}
-		}
-	}
-}
-
-//////////
-/*
-	SearchForm
-*/
-
-#formSubmission form{
-	display: flex;
-	justify-content: center;
-	margin: 30px;
-	#locationInput_holder{
-		input{
-
-		}
-	}
-	#keyInput_holder{
-		input{
-
-		}
-	}
-}
-
-//////////
-/*
-	Additional Results info
-*/
-
-#additional_info{
-	text-align: center;
-}
-
-div.resultCard{
-	text-align: center;
-	margin-top: 20px;
-	border: 10px solid orange;
-	border-radius: 10px;
-	transition: 0.5s;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	&:hover{
-		cursor: pointer;
-		transform: scale(0.95);
-	}
-}
+a{color: inherit;	text-decoration: none;}
 
 div.selfImg_holder, div.otherImg_holder{
 	max-width: 50px;
@@ -118,26 +38,232 @@ div.selfImg_holder, div.otherImg_holder{
 	}
 }
 
-/*loading
-https://www.w3schools.com/howto/howto_css_loader.asp
+body{
+	background-image: url('/public/images/pentagon.png');
+	font-family: $headFont;
+}
+
+#maincontent_holder{
+	height: 100%;
+	#maincontent{}
+}
+
+#greet{
+	font-family: $bodyFont;
+	color: rgba(0,0,0, 0.7);
+}
+
+#landingText{
+	font-family: $bodyFont;
+	color: $maincolor1;
+	font-size: 50px;
+}
+
+///////////
+/*
+	Header Navigation
 */
 
+nav {
+	background-color: $maincolor2;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
+	// padding-bottom: 30px;
+	.wrapper{
+		text-align: center;
+		display: flex;
+		#logo{
+			align-self: flex-start;
+			text-align: left;
+			font-family: 'Anton', sans-serif;;
+			letter-spacing: 2.5px;
+			color: $maincolor1;
+			i{
+				position: absolute;
+			}
+		}
+		section{
+			min-width: 360px;
+			// margin-left: auto;
+			display: flex; 
+			justify-content: space-around;
+			align-items: center;
+			margin-left: auto;
+			.profile_holder{
+				display: flex;
+				img{
+					box-sizing: border-box;
+					box-shadow: 0 4px 9px rgba(0,0,0,0.12), 0 5px 5px rgba(0,0,0,0.08);
+				}
+			}
+			button{
+				margin-left: auto;
+				box-sizing: border-box;
+				box-shadow: 0 4px 9px rgba(0,0,0,0.12), 0 5px 5px rgba(0,0,0,0.08);
+				position: relative;
+				/* width: 13em;  - apply for fixed size */
+				padding: 1px 18px;
+				border: none;
+				transition: 0.3s;
+				line-height: 34px;
+				border-radius: 0.2em;
+				color: #FFF;
+				background: $maincolor1;
+				&:hover{
+					transform: scale(0.95);
+				}
+				&:focus {
+				  outline: none;
+				}
+				&:active {
+				  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+				}
+			}
+		}
+	}
+}
+
+//////////
+/*
+	SearchForm
+*/
+
+#formSubmission{
+	#formHint{
+		font-family: $bodyFont;
+		margin-top: 2%;
+	}
+}
+
+#formSubmission form{
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+	#locationInput_holder{
+		margin-right: 0.1%;
+		width: 30%;
+		input{
+			box-shadow: 0 4px 1px rgba(0,0,0,0.12);
+			position: relative;
+			background-color: #ffffff;
+			height: 50px;
+			border: none;
+			width: 100%;
+			padding-left: 30px;
+			border-radius: 0.18em 0 0 0.18em;
+		}
+	}
+	#keyInput_holder{
+		margin-right: 0.1%;
+		width: 30%;
+		input{
+			padding-left: 30px;
+			box-shadow: 0 4px 1px rgba(0,0,0,0.12);
+			position: relative;
+			background-color: #ffffff;
+			height: 50px;
+			border: none;
+			width: 100%;
+		}
+	}
+	button{
+		box-sizing: border-box;
+		box-shadow: 0 4px 9px rgba(0,0,0,0.12), 0 5px 5px rgba(0,0,0,0.08);
+		position: relative;
+		/* width: 13em;  - apply for fixed size */
+		padding: 1px 18px;
+		border: none;
+		transition: 0.3s;
+		line-height: 34px;
+		border-radius: 0  0.18em 0.18em 0;
+		color: #FFF;
+		background: rgba(60,100,220,0.79);
+		&:focus {
+		  outline: none;
+		}
+		&:active {
+		  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+		}
+	}
+}
+
+//////////
+/*
+	Additional
+*/
+
+#additional_info{
+	text-align: center;
+}
+
+#pagination{
+	i{
+		padding: 4px;
+		&:hover{
+			color: orange;
+		}
+	}
+}
+
+//////////
+/*
+	Results card
+*/
+
+div.resultCard{
+	text-align: center;
+	background-color: white;
+	margin: 20px auto;
+	// border: 5px solid $maincolor1;
+	border-radius: 10px;
+	transition: 0.5s;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	display: flex;
+	max-width: 880px;
+	&:hover{
+		cursor: pointer;
+		transform: scale(0.98);
+	}
+	div.eventlogo_holder{
+		width: 40%;
+		height: 240px;
+		padding: 10px;
+		img{
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+		}
+	}
+	div.titledate_holder{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-height: 240px;
+		width: 60%;
+		overflow: hidden;
+		.title{
+			font-family: $bodyFont;
+		}
+	}
+}
+
+/*loading, credit:
+https://www.w3schools.com/howto/howto_css_loader.asp
+*/
 #loading_holder{
-	margin-top: 15%;
+	margin-top: 1%;
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	#loader {
 		border: 16px solid #f3f3f3;
 		border-radius: 50%;
-		border-top: 16px solid #3498db;
+		border-top: 16px solid $maincolor1;
 		width: 120px;
 		height: 120px;
 		-webkit-animation: spin 2s linear infinite;
 		animation: spin 2s linear infinite;
 	}
 }
-
 
 @-webkit-keyframes spin {
 	0% { -webkit-transform: rotate(0deg); }
