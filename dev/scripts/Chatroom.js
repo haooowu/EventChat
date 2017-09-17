@@ -1,6 +1,7 @@
 import React from "react";
 import { ajax } from 'jquery';
 import firebase, { auth, provider } from './firebase.js';
+import $ from "jquery";
 /* chatRoom
 		|____event_id *
 			|____pushID *
@@ -166,6 +167,8 @@ class EventDetailChat extends React.Component {
 		// 	: 	null
 		// }
 		var messageID = this.state.msgIDs;
+		$("#chatcontainer").animate({ scrollTop: "9999px"}, "slow");
+		console.log("hey");
 		return (
 			<div id="eventbrite_content">
 				{this.state.event && this.state.valid ? <h3 id="eventNameChat">{this.state.event[0].name.text}</h3> 
