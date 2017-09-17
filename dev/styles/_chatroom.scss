@@ -50,7 +50,7 @@ section#messageBox{
 	#chatcontainer{ //this is caused by count in firebase as one of the key
 		max-height: 480px;
 		min-height: 80px;
-		-webkit-overflow-scrolling: touch; 
+		// -webkit-overflow-scrolling: touch; //message not stick in bottom
 		overflow-y: scroll;
 		background-color: #fff;
 		padding: 10px 10px 8px 10px;

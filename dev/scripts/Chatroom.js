@@ -167,7 +167,7 @@ class EventDetailChat extends React.Component {
 		// 	: 	null
 		// }
 		var messageID = this.state.msgIDs;
-		$("#chatcontainer").animate({ scrollTop: "9999px"}, "slow");
+		$("#chatcontainer").animate({ scrollTop: "999999px"}, "slow");
 		console.log("hey");
 		return (
 			<div id="eventbrite_content">
