@@ -48,6 +48,13 @@ class EventDetailChat extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	componentDidMount(){
+		//turn off previous firebase listener
+		const chatfoo = firebase.database().ref(`/chatRoom/${this.props.match.params.event_id}`);
+		const prefoo = firebase.database().ref(`/userHistory/${this.state.uid}`);
+		const prebar = firebase.database().ref(`/chatRoom/`);
+		prefoo.off();
+		prebar.off();
+		chatfoo.off();
 		//event detail
 		ajax({
 			url: `https://www.eventbriteapi.com/v3/events/${this.props.match.params.event_id}/?token=${token}`,
@@ -103,6 +110,7 @@ class EventDetailChat extends React.Component {
 						msgIDs: newMsgIDsArray
 					})
 				})//end of snapshot
+				// foo.off();
 			}//end of if 
 		});
 	}

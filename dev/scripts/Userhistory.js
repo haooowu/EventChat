@@ -66,12 +66,6 @@ class History extends React.Component {
 			}//end of if user
 		});
 	}
-	// componentWillUnmount(){
-	// 	const foo1 = firebase.database().ref(`/userHistory/${this.state.uid}`);
-	// 	const bar1 = firebase.database().ref(`/chatRoom/`);
-	// 	foo1.off();
-	// 	bar1.off();
-	// }
 	render() {
 		//console.log(this.state.history)
 		return (
