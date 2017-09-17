@@ -27,6 +27,13 @@ class History extends React.Component {
 			history:[], msgcount:[], uid:""
 		};
 	}
+	handleDelete(id){
+		if (confirm("Removed this event showing from history?")){
+			firebase.database().ref(`/userHistory/${this.state.uid}/${id}`).remove();
+		} else {
+			//nothing
+		};
+	}
 	//warning.js:35 Warning: setState(...): Can only update a mounted or mounting component. This usually means you called setState() on an unmounted component. This is a no-op. Please check the code for the EventDetailChat component.
 	componentDidMount(){
 		firebase.auth().onAuthStateChanged((user) => {
@@ -77,8 +84,11 @@ class History extends React.Component {
 								<div className="eventlogo_holder">
 									<img src={`${event.logourl}`} alt=""/>
 								</div>
-							
 								<div className="titledate_holder bar">
+									<button onClick={(e) => {this.handleDelete(event.link.match(/\/(.*?)\//)[1]);e.preventDefault()}} 
+										className="removehistory">
+										<i className="fa fa-trash-o" aria-hidden="true"></i>
+									</button>
 									<h5>Total Message: <span id="msgCount"> {this.state.msgcount[0][event.eventid]}</span></h5>
 									<h2>{event.title}</h2>
 									<div>

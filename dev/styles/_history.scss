@@ -6,6 +6,7 @@ span#msgCount{
 
 div.bar{
 	justify-content: space-between;
+	position: relative;
 }
 
 p#attension, #warn{
@@ -15,5 +16,21 @@ p#attension, #warn{
 }
 
 #warn{
-	color: black;
+	color: $black;
+}
+
+button.removehistory{
+	z-index: 999;
+	position: absolute;
+	border: none;
+	background: transparent;
+	width: 50px;
+	right: 5px;
+	top: 15px;
+	@include respond_to(spacing) {
+		top: 1px;
+	}
+	&:hover{
+		color: $maincolor1;
+	}
 }

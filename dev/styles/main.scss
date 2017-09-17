@@ -17,6 +17,10 @@
 /*
 	General
 */
+body{
+	height: 100vh;
+}
+
 .wrapper{
 	max-width: 980px;
 	margin: 0 auto;
@@ -56,6 +60,15 @@ body{
 	font-family: $bodyFont;
 	color: $maincolor1;
 	font-size: 50px;
+	@include respond_to(small) {
+		font-size: 36px;
+	}
+}
+
+h3{
+	@include respond_to(small) {
+		font-size: 14px;
+	}
 }
 
 ///////////
@@ -67,15 +80,22 @@ nav {
 	background-color: $maincolor2;
 	box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
 	// padding-bottom: 30px;
+	@include respond_to(spacing) {
+		height: 155px;
+	}
 	.wrapper{
 		text-align: center;
 		display: flex;
+		flex-wrap: wrap;
 		#logo{
-			align-self: flex-start;
-			text-align: left;
+			text-align: center;
 			font-family: 'Anton', sans-serif;;
 			letter-spacing: 2.5px;
 			color: $maincolor1;
+			@include respond_to(spacing) {
+				width: 100%;
+				padding-right: 36px;
+			}
 			i{
 				position: absolute;
 			}
@@ -87,6 +107,13 @@ nav {
 			justify-content: space-around;
 			align-items: center;
 			margin-left: auto;
+			@include respond_to(spacing) {
+				margin: 0 auto;
+			}
+			@include respond_to(small) {
+				min-width: 320px;
+				transform: scale(0.7);
+			}
 			.profile_holder{
 				display: flex;
 				img{
@@ -107,6 +134,9 @@ nav {
 				border-radius: 0.2em;
 				color: #FFF;
 				background: $maincolor1;
+				@include respond_to(spacing) {
+					margin-left: 0;
+				}
 				&:hover{
 					transform: scale(0.95);
 				}
@@ -137,9 +167,15 @@ nav {
 	display: flex;
 	justify-content: center;
 	padding-top: 30px;
+	flex-wrap: wrap;
+	transition: 0.1s;
 	#locationInput_holder{
 		margin-right: 0.1%;
 		width: 30%;
+		transition: 0.2s;
+		@include respond_to(spacing) {
+			width: 100%;
+		}
 		input{
 			box-shadow: 0 4px 1px rgba(0,0,0,0.12);
 			position: relative;
@@ -152,8 +188,13 @@ nav {
 		}
 	}
 	#keyInput_holder{
+		transition: 0.2s;
 		margin-right: 0.1%;
 		width: 30%;
+		@include respond_to(spacing) {
+			width: 100%;
+			padding-top: 5px;
+		}
 		input{
 			padding-left: 30px;
 			box-shadow: 0 4px 1px rgba(0,0,0,0.12);
@@ -176,6 +217,10 @@ nav {
 		border-radius: 0  0.18em 0.18em 0;
 		color: #FFF;
 		background: rgba(60,100,220,0.79);
+		@include respond_to(spacing) {
+			width: 50%;
+			margin-top: 5px;
+		}
 		&:focus {
 		  outline: none;
 		}
@@ -198,8 +243,11 @@ nav {
 #pagination{
 	i{
 		padding: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
 		&:hover{
-			color: orange;
+			cursor: pointer;
+			color: $maincolor1;
 		}
 	}
 }
@@ -219,14 +267,19 @@ div.resultCard{
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	display: flex;
 	max-width: 880px;
+	flex-wrap: wrap;
 	&:hover{
 		cursor: pointer;
-		transform: scale(0.98);
 	}
+	
 	div.eventlogo_holder{
 		width: 40%;
 		height: 240px;
 		padding: 10px;
+		@include respond_to(spacing) {
+			width: 90%;
+			margin: 0 auto;
+		}
 		img{
 			width: 100%;
 			height: 100%;
@@ -236,12 +289,39 @@ div.resultCard{
 	div.titledate_holder{
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
 		max-height: 240px;
 		width: 60%;
 		overflow: hidden;
+		@include respond_to(spacing) {
+			width: 100%;
+			justify-content: space-between;
+			max-height: 240px;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
 		.title{
 			font-family: $bodyFont;
+			text-decoration: underline;
+			&:hover{
+				color: $maincolor1;
+			}
+		}
+		h2{
+			width: 98%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		h3{
+			width: 98%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		h5{
+			@include respond_to(spacing) {
+				margin: 0;
+			}
 		}
 	}
 }

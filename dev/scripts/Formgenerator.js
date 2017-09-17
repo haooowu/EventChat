@@ -99,6 +99,7 @@ class EventGenerator extends React.Component {
 										<div className="titledate_holder">
 											<h5>Start: {event.start.local.replace(/T/g , " ")}</h5>
 											<h3 className = "title">{event.name.text}</h3>
+											{event.is_free ? <h5 className="fees">Free event</h5> : <h5>Fees may apply</h5>} 
 											<h5>End: {event.end.local.replace(/T/g , " ")}</h5>
 										</div>
 									</div>

@@ -46,6 +46,7 @@ class App extends React.Component {
 			});
 		}
 	}
+
 	handleChange(input){ //name property on form
 		input.preventDefault();
 		this.setState({
@@ -81,7 +82,7 @@ class App extends React.Component {
 					//if (!event.hasOwnProperty("logo")) {
 					if (event.logo === null) {
 						event.logo = {}
-						event.logo.url = "https://unsplash.it/440/240";
+						event.logo.url = "https://unsplash.it/440/240/?random";
 					}
 				})
 				this.setState({
@@ -202,7 +203,7 @@ class App extends React.Component {
 	                		/>
 	        			)} />
 	                <Route exact path="/:event_id/:venue_id" component={EventDetailChat}/>
-	                <Route exact path="/history" component={History} />
+	                <Route exact path="/history" component={History}/>
 	                </div>
 	        	</section>
 	        </div>

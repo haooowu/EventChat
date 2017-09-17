@@ -41,7 +41,7 @@ class Header extends React.Component {
 		return (
 			<nav>
 				<div className="wrapper">
-					<h1 id="logo"><Link to="/">EventChat<i className="fa fa-comment" aria-hidden="true"></i></Link></h1>
+					<h1 id="logo"><Link to="/">EventChat<i className="fa fa-commenting" aria-hidden="true"></i></Link></h1>
 					{this.state.uid ? 
 						<section id="usersection">
 							<Link to="/"><button id="homebtn">Home</button></Link>
@@ -55,7 +55,7 @@ class Header extends React.Component {
 						</section>
 						:
 						<section id="usersection">
-							<button id="loginbtn" onClick={this.login}>Log In</button>
+							<button id="loginbtn" onClick={this.login}>Login with <i className="fa fa-google" aria-hidden="true"></i></button>
 						</section>
 					}
 				</div>
