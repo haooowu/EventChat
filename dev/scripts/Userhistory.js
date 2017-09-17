@@ -24,9 +24,10 @@ class History extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			history:[], msgcount:[]
+			history:[], msgcount:[], uid:""
 		};
 	}
+	//warning.js:35 Warning: setState(...): Can only update a mounted or mounting component. This usually means you called setState() on an unmounted component. This is a no-op. Please check the code for the EventDetailChat component.
 	componentDidMount(){
 		firebase.auth().onAuthStateChanged((user) => {
 			if (user) {
@@ -50,13 +51,20 @@ class History extends React.Component {
 						newMsgcountHolder.push(newMsgcount)
 						this.setState({
 							history: newHistory,
-							msgcount: newMsgcountHolder
+							msgcount: newMsgcountHolder,
+							uid: user.uid
 						})
 					})//end of chat snapshot
 				})//end of user snapshot 
 			}//end of if user
 		});
 	}
+	// componentWillUnmount(){
+	// 	const foo1 = firebase.database().ref(`/userHistory/${this.state.uid}`);
+	// 	const bar1 = firebase.database().ref(`/chatRoom/`);
+	// 	foo1.off();
+	// 	bar1.off();
+	// }
 	render() {
 		//console.log(this.state.history)
 		return (

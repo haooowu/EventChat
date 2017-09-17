@@ -45,12 +45,11 @@ body{
 
 #maincontent_holder{
 	height: 100%;
-	#maincontent{}
 }
 
 #greet{
 	font-family: $bodyFont;
-	color: rgba(0,0,0, 0.7);
+	color: #ffffff;
 }
 
 #landingText{
@@ -193,6 +192,7 @@ nav {
 
 #additional_info{
 	text-align: center;
+	color: #ffffff;
 }
 
 #pagination{

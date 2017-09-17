@@ -4,6 +4,17 @@
 	}
 }
 
+#eventbrite_content{
+	background: white;
+	padding: 10px;
+	margin-top: 35px;
+	margin-bottom: 15px;
+}
+
+p#warn{
+	text-align: left;
+}
+
 h3#eventNameChat{
 	color: $maincolor1;
 }
@@ -26,7 +37,7 @@ section{
 
 
 section #messageBox{
-	max-width: 800px;
+	max-width: 100%;
 	margin: 10px auto;
 	h2{
 		text-align: center;
@@ -34,6 +45,7 @@ section #messageBox{
 	}
 	#chatcontainer{ //this is caused by count in firebase as one of the key
 		max-height: 480px;
+		min-height: 80px;
 		overflow-y: scroll;
 		background-color: #fff;
 		padding: 10px 10px 4px 10px;

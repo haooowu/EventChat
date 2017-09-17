@@ -28,8 +28,8 @@ class ChatForm extends React.Component {
 	render(){
 		return(
 			<section id="chatSubmission">
-				<form id="msgSubmit" onSubmit={this.props.handleSubmit}>
-				<input type="text" name="msg" placeholder="Message" onChange={this.props.handleChange} value={this.props.searchq} required/>
+				<form id="msgSubmit" onSubmit={this.props.handleSubmit} autoComplete="off">
+				<input type="text" name="msg" placeholder="Message" onChange={this.props.handleChange} value={this.props.searchq} required autoFocus/>
 				<button>SEND</button>
 				</form>
 			</section>
@@ -153,16 +153,16 @@ class EventDetailChat extends React.Component {
 		});
 	}
 	render() {
+		// {this.state.event && this.state.valid && this.state.event[0].logo ? 
+		// 	<img src={this.state.event[0].logo.url} alt="" />
+		// 	: 	null
+		// }
 		var messageID = this.state.msgIDs;
 		return (
-			<div>
+			<div id="eventbrite_content">
 				{this.state.event && this.state.valid ? <h3 id="eventNameChat">{this.state.event[0].name.text}</h3> 
 					: 
 					<h1>404 event page not found</h1>
-				}
-				{this.state.event && this.state.valid && this.state.event[0].logo ? 
-					<img src={this.state.event[0].logo.url} alt="" />
-					: 	null
 				}
 				{this.state.event && this.state.valid ? 
 					<section>
