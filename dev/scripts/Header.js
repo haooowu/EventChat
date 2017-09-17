@@ -55,7 +55,7 @@ class Header extends React.Component {
 						</section>
 						:
 						<section id="usersection">
-							<button id="loginbtn" onClick={this.login}>Login with <i className="fa fa-google" aria-hidden="true"></i></button>
+							<button id="loginbtn" onClick={this.login}>Login with <i className="fa fa-google" aria-hidden="true"></i>oogle</button>
 						</section>
 					}
 				</div>

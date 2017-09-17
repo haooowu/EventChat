@@ -29,7 +29,7 @@ class ChatForm extends React.Component {
 		return(
 			<section id="chatSubmission">
 				<form id="msgSubmit" onSubmit={this.props.handleSubmit} autoComplete="off">
-				<input type="text" name="msg" placeholder="Message" onChange={this.props.handleChange} value={this.props.searchq} required autoFocus/>
+				<input type="text" maxLength="360" name="msg" placeholder="Message" onChange={this.props.handleChange} value={this.props.searchq} required autoFocus/>
 				<button>SEND</button>
 				</form>
 			</section>
@@ -184,7 +184,7 @@ class EventDetailChat extends React.Component {
 										{this.state.uid.uid === msgholder[messageID[i]]["uid"] ?
 											<div className="self">
 												<div className="boo">
-													<p>{msgholder[messageID[i]]["time"]}</p>
+													<p><span>{msgholder[messageID[i]]["time"]}</span></p>
 													<div className="selfImg_holder">
 														<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
 													</div>
@@ -192,9 +192,11 @@ class EventDetailChat extends React.Component {
 											</div>
 											:
 											<div className="other">
-												<p><span>{msgholder[messageID[i]]["name"]}</span>, <span>{msgholder[messageID[i]]["time"]}</span></p>
-												<div className="otherImg_holder">
-													<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
+												<div className="boo">
+													<div className="otherImg_holder">
+														<img src={`${msgholder[messageID[i]]["photo"]}`} alt=""/>
+													</div>
+													<p><span>{msgholder[messageID[i]]["name"]}</span>, <span>{msgholder[messageID[i]]["time"]}</span></p>
 												</div>
 											</div>
 										}

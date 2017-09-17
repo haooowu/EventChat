@@ -94,11 +94,12 @@ div.chat_content{
 	position: relative;
 	//self, append right
 	div.self{
+		margin-top: 15px;
 		display: flex;
 		div.boo{
 			margin-left: auto;
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			div.selfImg_holder{
 				max-width: 50px;
 				max-height: 50px;
@@ -115,36 +116,50 @@ div.chat_content{
 			margin-left: auto;
 			font-size: 13px;
 			color: rgba(0,0,0,0.7);
+			span{
+				position: relative;
+				top: 3px;
+				right: 5px;
+			}
 		}
 	}
 	//other
 	div.other{
+		margin-top: 15px;
+		div.boo{
+			margin-left: auto;
+			display: flex;
+			flex-direction: row;
+		}
+		p{
+			position: relative;
+			left: 5px;
+		}
 		span{
 			font-size: 13px;
 			color : rgba(0,0,0,0.7);
 		}
 	}
+	//self-msg
 	div.self~div.actualmsg_holder{
-		position: absolute;
-		bottom: 15px;
 		padding: 4px 10px;
-		right: 55px;
+		padding-left: 55px;
 		border-radius: 10px;
-		border: 0.2px solid grey;
 		p{
+			width: 100%;
 			text-align: right;
 			margin: 0;
+			font-family: $bodyFont;
 		}
 	}
-
+	//other-msg
 	div.other~div.actualmsg_holder{
-		position: absolute;
-		bottom: 15px;
+		bottom: 10px;
 		padding: 4px 10px;
-		left: 55px;
+		padding-left: 4px;
 		border-radius: 10px;
-		border: 0.2px solid grey;
 		p{
+			font-family: $bodyFont;
 			margin: 0;
 		}
 	}
