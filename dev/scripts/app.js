@@ -7,7 +7,6 @@ import EventDetailChat from "./Chatroom.js";
 import Header from "./Header.js";
 import History from "./Userhistory.js";
 import EventGenerator from "./Formgenerator.js";
-
 /*
 Strech goal in future: 
 -user can delete their own chats (thus message count has to -1 too), also upload image to chat using storage 
@@ -139,20 +138,19 @@ class App extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		const form = document.getElementById("form_search");
-		form.reset();
-		//saving previous data into temp value
+		const form = document.getElementById("locationInput");
+		//console.log(form.value);
 		this.setState({
 			showEvent: false,
 			tempsearchq: this.state.searchq,
-			templocation: this.state.location,
+			templocation: form.value,
 			page: 1
 		})
 		ajax({ //ajax to call search
 			url: `https://www.eventbriteapi.com/v3/events/search/?token=${token}`,
 			data: {
 				q: this.state.searchq, //keyword requrire either q or location to search
-				"location.address": this.state.location, //evenbrite search city/country/region
+				"location.address": form.value, //evenbrite search city/country/region
 				sort_by: this.state.sort,   //"date", "distance" and "best" , - to reverse
 				"location.within":"", //recommand up to 150km
 				"price":"", //deafult all, or either "paid" or "free"
@@ -210,16 +208,5 @@ class App extends React.Component {
 	    </Router>)
     }
 }
-
-// AUTOCOMPLETE BUG: when typeing and selecting from npm google-auto-compelete, 
-// keypress for the location of the autofill and press enter will not updates the location state 
-// except actual click, thus onsubmit will only search for what typed in onchage
-$(document).ready(function() { //have to force ignore form submission by enter
-	$(window).keydown(function(event){//same situation for chat form submit using enter/arrow keypress
-		if(event.keyCode == 13) {
-			event.preventDefault();
-		}
-	});
-});
 
 ReactDOM.render(<App />, document.getElementById('app'));
