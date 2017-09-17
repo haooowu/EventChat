@@ -60,6 +60,8 @@ body{
 
 #maincontent_holder{
 	height: 100%;
+	opacity: 0;
+	animation: fade .6s ease-in 1 forwards;
 }
 
 #greet{
@@ -249,6 +251,14 @@ nav {
 #additional_info{
 	text-align: center;
 	color: #ffffff;
+	opacity: 0;
+	animation: fade .6s ease-in 1 forwards;
+}
+
+@keyframes fade {
+	to {
+	  opacity: 1;
+	}
 }
 
 #pagination{
