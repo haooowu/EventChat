@@ -19,6 +19,7 @@ p#warn{
 
 h3#eventNameChat{
 	color: $maincolor1;
+	font-size: 19px;
 }
 
 
@@ -32,7 +33,8 @@ section{
 	}
 	#locationChat{
 		text-transform: uppercase;
-		font-size: 19px;
+		color: $maincolor1;
+		font-size: 15px;
 	}
 }
 
@@ -48,6 +50,7 @@ section #messageBox{
 	#chatcontainer{ //this is caused by count in firebase as one of the key
 		max-height: 480px;
 		min-height: 80px;
+		-webkit-overflow-scrolling: touch; 
 		overflow-y: scroll;
 		background-color: #fff;
 		padding: 10px 10px 8px 10px;

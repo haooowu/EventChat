@@ -21,6 +21,17 @@ body{
 	height: 100vh;
 }
 
+a#redirection{
+	display: flex;
+	h4{
+		line-height: 60px;
+		display: inline;
+	}
+	img{
+		height: 100px;
+	}
+}
+
 .wrapper{
 	max-width: 980px;
 	margin: 0 auto;
@@ -298,6 +309,7 @@ div.resultCard{
 			max-height: 240px;
 			padding-left: 6px;
 			padding-right: 6px;
+			margin-bottom: 8px;
 		}
 		.title{
 			font-family: $bodyFont;

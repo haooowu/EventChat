@@ -29,7 +29,7 @@ class ChatForm extends React.Component {
 		return(
 			<section id="chatSubmission">
 				<form id="msgSubmit" onSubmit={this.props.handleSubmit} autoComplete="off">
-				<input type="text" maxLength="360" name="msg" placeholder="Message" onChange={this.props.handleChange} value={this.props.searchq} required autoFocus/>
+				<input type="text" maxLength="360" name="msg" placeholder="Message:" onChange={this.props.handleChange} value={this.props.searchq} required/>
 				<button>SEND</button>
 				</form>
 			</section>
@@ -167,9 +167,9 @@ class EventDetailChat extends React.Component {
 				{this.state.event && this.state.valid ? 
 					<section>
 						<div id="descriptionHtml" dangerouslySetInnerHTML={{__html: this.state.event[0].description.html}}></div>
-						<a href={this.state.event[0].url}><h4>Go to Eventbrite Page</h4></a>
-						<p id="locationChat">Location:</p>
-						<div>{this.state.address}</div>
+						<a id="redirection" href={this.state.event[0].url}><h4>View it on</h4><img id="eventbritelogo" src="../public/images/eventbritelogo.png" /></a>
+						<p>Location:</p>
+						<div><p id="locationChat">{this.state.address}</p></div>
 					</section>
 					: null
 				}
