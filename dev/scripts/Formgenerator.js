@@ -5,46 +5,42 @@ import Autocomplete from 'react-google-autocomplete';
 //https://www.npmjs.com/package/react-google-autocomplete
 //https://developers.google.com/maps/documentation/javascript/get-api-key
 
-class Form extends React.Component{
-	render(){
-		return(
-			<section id="formSubmission">
-				<form id="form_search" onSubmit={this.props.handleSubmit}>
-				<div id="locationInput_holder">
-					<Autocomplete
-						id="locationInput"
-						onPlaceSelected={this.props.handleAutofill}
-						types={['(regions)']}
-						name="location"
-						value={this.props.location}
-						onChange={this.props.handleChange}
-					/>
-				</div>
-				<div id="keyInput_holder"><input id="keyInput" type="text" name="searchq" placeholder="Keyword" onChange={this.props.handleChange} value={this.props.searchq} /></div>
-				<button>SEARCH</button>
-				</form>
-			</section>
-		)
-	}
+const Form = (props) =>{
+	return(
+		<section id="formSubmission">
+			<form id="form_search" onSubmit={props.handleSubmit}>
+			<div id="locationInput_holder">
+				<Autocomplete
+					id="locationInput"
+					onPlaceSelected={props.handleAutofill}
+					types={['(regions)']}
+					name="location"
+					value={props.location}
+					onChange={props.handleChange}
+				/>
+			</div>
+			<div id="keyInput_holder"><input id="keyInput" type="text" name="searchq" placeholder="Keyword" onChange={props.handleChange} value={props.searchq} /></div>
+			<button>SEARCH</button>
+			</form>
+		</section>
+	)
 }
 
-class AdditionalResult extends React.Component{
-	render(){
-		return(
-			<section id="formSubmission">
-				<div id="formHint">
-					{this.props.templocation != "" ?
-						<span>Location: {this.props.templocation} </span> : null
-					}
-					{this.props.tempsearchq != "" ?
-						<span>keyword: {this.props.tempsearchq}</span> : null
-					}
-				</div>
-					 <h3 id="pagination"> <span onClick={this.props.handlePrevious}><i className="fa fa-arrow-left" aria-hidden="true"></i></span> Total {this.props.counts} events | Page: {this.props.page}
-					 <span onClick={this.props.handleClick}> <i className="fa fa-arrow-right" aria-hidden="true"></i></span> </h3>
-			</section>
-		)
-	}
+const AdditionalResult = (props) =>{
+	return(
+		<section id="formSubmission">
+			<div id="formHint">
+				{props.templocation != "" ?
+					<span>Location: {props.templocation} </span> : null
+				}
+				{props.tempsearchq != "" ?
+					<span>keyword: {props.tempsearchq}</span> : null
+				}
+			</div>
+					<h3 id="pagination"> <span onClick={props.handlePrevious}><i className="fa fa-arrow-left" aria-hidden="true"></i></span> Total {props.counts} events | Page: {props.page}
+					<span onClick={props.handleClick}> <i className="fa fa-arrow-right" aria-hidden="true"></i></span> </h3>
+		</section>
+	)
 }
 
 class EventGenerator extends React.Component {
@@ -73,15 +69,15 @@ class EventGenerator extends React.Component {
 										<h3 id="greet">Greetings! {this.props.state.sth}</h3>
 										<h1 id="landingText">Welcome to EventChat</h1>
 										<h3>This site is an Eventbrite viewer with chatroom functionality for each event</h3>
-										<h3>Type into either inputs to start search events!</h3>
 										<h3>You can login to use chat room, and view your chat history for your events</h3>
+										<h3>Type into either inputs to start search events!</h3>
 									</div>
 									 : 
 									<div>
 										<h1 id="landingText">Welcome to EventChat</h1>
 										<h3>This site is an Eventbrite viewer with chatroom functionality for each event</h3>
-										<h3>Type into either inputs to start search events!</h3>
 										<h3>You can login to use chat room, and view your chat history for your events</h3>
+										<h3>Type into either inputs to start search events!</h3>
 									</div>
 								}
 							</div>
