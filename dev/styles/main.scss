@@ -79,7 +79,15 @@ footer {
 	bottom: 0;
 	width: 100%;
 	height: 50px;
-	background: red;
+	background: rgba(33, 36, 39, 0.79);
+	text-align: center;
+	@include respond_to(sheight) {
+		display: none;
+	}
+	p{
+		font-size: 13px;
+		color: #C4C4C4;
+	}
 }
 
 #greet{

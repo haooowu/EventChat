@@ -21,6 +21,11 @@
       @content;
     }
   }
+  @else if $breakpoint == "sheight" {
+    @media only screen and (max-height: 729px) {
+      @content;
+    }
+  }
   @else if $breakpoint == "xlarge" {
     @media only screen and (min-width: 1500px) {
       @content;
