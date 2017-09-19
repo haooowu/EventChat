@@ -41,7 +41,9 @@ class Header extends React.Component {
 		return (
 			<nav>
 				<div className="wrapper">
-					<h1 id="logo"><Link to="/">EventChat<i className="fa fa-commenting" aria-hidden="true"></i></Link></h1>
+					<h1 id="logo">
+						<Link to="/">EventChat<i className="fa fa-commenting" aria-hidden="true"></i></Link>
+					</h1>
 					{this.state.uid ? 
 						<section id="usersection">
 							<Link to="/"><button id="homebtn">Home</button></Link>

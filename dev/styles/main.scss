@@ -194,7 +194,7 @@ nav {
 	transition: 0.1s;
 	#locationInput_holder{
 		margin-right: 0.1%;
-		width: 30%;
+		width: 40%;
 		transition: 0.2s;
 		@include respond_to(spacing) {
 			width: 100%;
@@ -213,7 +213,7 @@ nav {
 	#keyInput_holder{
 		transition: 0.2s;
 		margin-right: 0.1%;
-		width: 30%;
+		width: 40%;
 		@include respond_to(spacing) {
 			width: 100%;
 			padding-top: 5px;
