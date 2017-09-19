@@ -168,7 +168,7 @@ class EventDetailChat extends React.Component {
 		// }
 		var messageID = this.state.msgIDs;
 		$("#chatcontainer").animate({ scrollTop: "999999px"}, "slow");
-		console.log("hey");
+		//console.log("hey");
 		return (
 			<div id="eventbrite_content">
 				{this.state.event && this.state.valid ? <h3 id="eventNameChat">{this.state.event[0].name.text}</h3> 

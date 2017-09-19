@@ -103,7 +103,7 @@ nav {
 		#logo{
 			text-align: center;
 			font-family: 'Anton', sans-serif;;
-			letter-spacing: 2.5px;
+			letter-spacing: 1.5px;
 			color: $maincolor1;
 			@include respond_to(spacing) {
 				width: 100%;
@@ -283,7 +283,7 @@ div.resultCard{
 	background-color: white;
 	margin: 20px auto;
 	// border: 5px solid $maincolor1;
-	border-radius: 10px;
+	border-radius: 8px;
 	transition: 0.5s;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	display: flex;

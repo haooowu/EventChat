@@ -35,7 +35,7 @@ class App extends React.Component {
 	}
 	updateUser(user, flag){ //pass to Eventgenerator
 		if (flag){ //flag to check auth status from header
-			console.log(user.displayName)
+			//console.log(user.displayName)
 			this.setState({
 				sth: user.displayName
 			});
@@ -54,7 +54,7 @@ class App extends React.Component {
 	}
 	handleAutofill(address){ //handle data from autocomplete package
 		if (address.formatted_address != undefined){
-			console.log(address.formatted_address)
+			//console.log(address.formatted_address)
 			this.setState({
 				"location":address.formatted_address
 			});
@@ -76,7 +76,7 @@ class App extends React.Component {
 				},
 				dataType: "json"
 			}).then((data) => {
-				console.log(data)
+				//console.log(data)
 				data.events.map((event) =>{
 					//if (!event.hasOwnProperty("logo")) {
 					if (event.logo === null) {
@@ -113,7 +113,7 @@ class App extends React.Component {
 				},
 				dataType: "json"
 			}).then((data) => {
-				console.log(data)
+				//console.log(data)
 				data.events.map((event) =>{
 					//if (!event.hasOwnProperty("logo")) {
 					if (event.logo === null) {
@@ -158,7 +158,7 @@ class App extends React.Component {
 			},
 			dataType: "json"
 		}).then((data) => {
-			console.log(data)
+			//console.log(data)
 			data.events.map((event) =>{
 				//if (!event.hasOwnProperty("logo")) {
 				if (event.logo === null) {

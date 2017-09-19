@@ -6,11 +6,12 @@
 
 #eventbrite_content{
 	background: white;
-	padding: 10px;
+	padding: 10px 3% 10px 3%;
 	margin-top: 35px;
 	margin-bottom: 15px;
-	border-radius: 0.2em;
+	border-radius: 12px;
 	overflow: hidden;
+	box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 p#warn{
