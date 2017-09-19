@@ -68,16 +68,16 @@ class EventGenerator extends React.Component {
 									<div>
 										<h3 id="greet">Greetings! {this.props.state.sth}</h3>
 										<h1 id="landingText">Welcome to EventChat</h1>
-										<h3>This site is an Eventbrite viewer with chatroom functionality for each event</h3>
-										<h3>You can login to use chat room, and view your chat history for your events</h3>
-										<h3>Type into either inputs to start search events!</h3>
+										<p>This site is an Eventbrite viewer with chatroom functionality for each event</p>
+										<p>You can login to use chat room, and view your chat history for your events</p>
+										<p>Type into either inputs to start search events!</p>
 									</div>
 									 : 
 									<div>
 										<h1 id="landingText">Welcome to EventChat</h1>
-										<h3>This site is an Eventbrite viewer with chatroom functionality for each event</h3>
-										<h3>You can login to use chat room, and view your chat history for your events</h3>
-										<h3>Type into either inputs to start search events!</h3>
+										<p>This site is an Eventbrite viewer with chatroom functionality for each event</p>
+										<p>You can login to use chat room, and view your chat history for your events</p>
+										<p>Type into either inputs to start search events!</p>
 									</div>
 								}
 							</div>

@@ -105,6 +105,7 @@ nav {
 			font-family: 'Anton', sans-serif;;
 			letter-spacing: 1.5px;
 			color: $maincolor1;
+			text-shadow:  0 4px 9px rgba(0,0,0,0.12), 0 5px 5px rgba(0,0,0,0.08);
 			@include respond_to(spacing) {
 				width: 100%;
 				padding-right: 36px;
@@ -253,6 +254,10 @@ nav {
 	color: #ffffff;
 	opacity: 0;
 	animation: fade .6s ease-in 1 forwards;
+	p{
+		font-family: $bodyFont;
+		font-weight: normal;
+	}
 }
 
 @keyframes fade {
