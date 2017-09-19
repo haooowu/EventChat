@@ -1,4 +1,5 @@
 import React from "react";
+import $ from "jquery"
 import firebase, { auth, provider } from './firebase.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -41,13 +42,13 @@ class Header extends React.Component {
 		return (
 			<nav>
 				<div className="wrapper">
-					<h1 id="logo">
+					<h1 id="logo" onClick={()=>	$("footer").show()}>
 						<Link to="/">EventChat<i className="fa fa-commenting" aria-hidden="true"></i></Link>
 					</h1>
 					{this.state.uid ? 
 						<section id="usersection">
-							<Link to="/"><button id="homebtn">Home</button></Link>
-							<Link to="/history/"><button id="historybtn">History</button></Link>
+							<Link to="/"><button id="homebtn" onClick={()=>	$("footer").show()}>Home</button></Link>
+							<Link to="/history/"><button id="historybtn" onClick={()=>$("footer").hide()}>History</button></Link>
 							<Link to="/"><button id="logoutbtn" onClick={this.logout}>Log Out</button></Link>
 							<div className="profile_holder">
 								<div className="selfImg_holder">

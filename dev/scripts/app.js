@@ -138,6 +138,7 @@ class App extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		$("footer").remove();
 		const form = document.getElementById("locationInput");
 		//console.log(form.value);
 		this.setState({
@@ -204,6 +205,7 @@ class App extends React.Component {
 	                <Route exact path="/history" component={History}/>
 	                </div>
 	        	</section>
+				<footer>HEY</footer>
 	        </div>
 	    </Router>)
     }
