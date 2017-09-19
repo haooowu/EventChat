@@ -49,6 +49,7 @@ class EventDetailChat extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	componentDidMount(){
+		$("footer").hide();
 		//turn off previous firebase listener
 		const chatfoo = firebase.database().ref(`/chatRoom/${this.props.match.params.event_id}`);
 		const prefoo = firebase.database().ref(`/userHistory/${this.state.uid}`);

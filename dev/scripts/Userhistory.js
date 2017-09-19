@@ -1,4 +1,5 @@
 import React from "react";
+import $ from "jquery";
 import firebase, { auth, provider } from './firebase.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 /* chatRoom
@@ -36,6 +37,7 @@ class History extends React.Component {
 	}
 	//warning.js:35 Warning: setState(...): Can only update a mounted or mounting component. This usually means you called setState() on an unmounted component. This is a no-op. Please check the code for the EventDetailChat component.
 	componentDidMount(){
+		$("footer").hide();
 		firebase.auth().onAuthStateChanged((user) => {
 			if (user) {
 				//console.log(user.uid);
