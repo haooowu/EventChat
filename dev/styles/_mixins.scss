@@ -22,7 +22,7 @@
     }
   }
   @else if $breakpoint == "sheight" {
-    @media only screen and (max-height: 729px) {
+    @media only screen and (max-height: 529px) {
       @content;
     }
   }

@@ -81,6 +81,9 @@ footer {
 	height: 50px;
 	background: rgba(33, 36, 39, 0.79);
 	text-align: center;
+	@include respond_to(spacing) {
+		display: none;
+	}
 	@include respond_to(sheight) {
 		display: none;
 	}
@@ -102,6 +105,7 @@ footer {
 #landingText{
 	font-family: $bodyFont;
 	color: $maincolor1;
+	margin: 25px 0;
 	font-size: 50px;
 	@include respond_to(spacing) {
 		font-size: 44px;

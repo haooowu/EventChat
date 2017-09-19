@@ -186,7 +186,6 @@ class App extends React.Component {
 		});// console.log(i + ":"+ this.state.events[i].logo)
 	}
     render() {
-		$("homebutton").click(); //TODO: footer not showing when first lunach
         return (<Router>
 	        <div>
 		        <Header updateUser={this.updateUser} />
