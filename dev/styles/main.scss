@@ -85,6 +85,10 @@ footer {
 		display: none;
 	}
 	p{
+		margin: 0;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
 		font-size: 13px;
 		color: #C4C4C4;
 	}
@@ -99,6 +103,9 @@ footer {
 	font-family: $bodyFont;
 	color: $maincolor1;
 	font-size: 50px;
+	@include respond_to(spacing) {
+		font-size: 44px;
+	}
 	@include respond_to(small) {
 		font-size: 36px;
 	}
@@ -284,6 +291,9 @@ nav {
 	p{
 		font-family: $bodyFont;
 		font-weight: normal;
+		@include respond_to(spacing) {
+			font-size: 15px;
+		}
 	}
 }
 
