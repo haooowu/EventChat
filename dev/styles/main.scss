@@ -57,15 +57,16 @@ body{
 	background-image: url('/public/images/pentagon.png');
 	font-family: $headFont;
 	height: 100%;
-	animation: 20s linear infinite hero;
-	@keyframes hero{
-		from{
-			background-position:0 0;
-		}
-		to{
-			background-position: 600px 0; 
-		}
-	}
+	// animation: 20s linear infinite hero;
+	// transform: translateZ(0);
+	// @keyframes hero{
+	// 	from{
+	// 		background-position:0 0;
+	// 	}
+	// 	to{
+	// 		background-position: 600px 0; 
+	// 	}
+	// }
 }
 
 #maincontent_holder{
