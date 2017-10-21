@@ -205,7 +205,7 @@ class App extends React.Component {
 	                <Route exact path="/history" component={History}/>
 	                </div>
 	        	</section>
-				<footer><p>Powered by ©Evenbrite and built in React | Hao 2017</p></footer>
+				<footer><p>Powered by ©Eventbrite and built in React | Hao 2017</p></footer>
 	        </div>
 	    </Router>)
     }
