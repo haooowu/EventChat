@@ -5,5 +5,5 @@ Due to Event Search API shut down from Eventbrite in Dec, 2019. Search event by 
 for more information, see [Eventbrite changelog](https://www.eventbrite.com/platform/docs/changelog)
 
 
-##Examples
+## Features
 ![](https://github.com/haooowu/EventChat/blob/master/screenShots.png)
